@@ -45,9 +45,9 @@
       },
       "MSTest.Analyzers": {
         "type": "Direct",
-        "requested": "[3.3.1, )",
-        "resolved": "3.3.1",
-        "contentHash": "rfgCjzDW94+nq6/qt/UV/FdEur6352rBLghPNMPF7rasLWeeWZNpn8pWggTJkPUPdChGMf1jFWSBQfstaP3jwg=="
+        "requested": "[3.11.0, )",
+        "resolved": "3.11.0",
+        "contentHash": "RJAcnF9izm2ln8qytMC0NqAzCIAgnEJONVl6y9omTRahOseCF7TL8kPYo6uSfHfU8acm0eX+H08clJqXcZWNxw=="
       },
       "MSTest.TestAdapter": {
         "type": "Direct",
@@ -350,9 +350,9 @@
       },
       "MSTest.Analyzers": {
         "type": "Direct",
-        "requested": "[3.3.1, )",
-        "resolved": "3.3.1",
-        "contentHash": "rfgCjzDW94+nq6/qt/UV/FdEur6352rBLghPNMPF7rasLWeeWZNpn8pWggTJkPUPdChGMf1jFWSBQfstaP3jwg=="
+        "requested": "[3.11.0, )",
+        "resolved": "3.11.0",
+        "contentHash": "RJAcnF9izm2ln8qytMC0NqAzCIAgnEJONVl6y9omTRahOseCF7TL8kPYo6uSfHfU8acm0eX+H08clJqXcZWNxw=="
       },
       "MSTest.TestAdapter": {
         "type": "Direct",
@@ -598,9 +598,9 @@
       },
       "MSTest.Analyzers": {
         "type": "Direct",
-        "requested": "[3.3.1, )",
-        "resolved": "3.3.1",
-        "contentHash": "rfgCjzDW94+nq6/qt/UV/FdEur6352rBLghPNMPF7rasLWeeWZNpn8pWggTJkPUPdChGMf1jFWSBQfstaP3jwg=="
+        "requested": "[3.11.0, )",
+        "resolved": "3.11.0",
+        "contentHash": "RJAcnF9izm2ln8qytMC0NqAzCIAgnEJONVl6y9omTRahOseCF7TL8kPYo6uSfHfU8acm0eX+H08clJqXcZWNxw=="
       },
       "MSTest.TestAdapter": {
         "type": "Direct",
