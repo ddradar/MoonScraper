@@ -1,4 +1,4 @@
-using Sample.Core;
+using MoonScraper.Core;
 
 namespace Sample.Test;
 

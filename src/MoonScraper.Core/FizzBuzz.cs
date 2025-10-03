@@ -1,4 +1,4 @@
-namespace Sample.Core;
+namespace MoonScraper.Core;
 
 /// <summary>
 /// Extension methods for int.
