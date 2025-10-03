@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="src/MoonScraper.Core/MoonScraper.Core.csproj" />
+  <Project Path="test/MoonScraper.Core.Tests/MoonScraper.Core.Tests.csproj" />
+</Solution>
