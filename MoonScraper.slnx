@@ -1,4 +1,17 @@
 <Solution>
-  <Project Path="src/MoonScraper.Core/MoonScraper.Core.csproj" />
-  <Project Path="test/MoonScraper.Core.Tests/MoonScraper.Core.Tests.csproj" />
+  <Folder Name="/Solution Items/">
+    <File Path=".editorconfig" />
+    <File Path=".gitignore" />
+    <File Path="Directory.Build.props" />
+    <File Path="Directory.Packages.props" />
+    <File Path="global.json" />
+    <File Path="LICENSE" />
+    <File Path="README.md" />
+  </Folder>
+  <Folder Name="/src/">
+    <Project Path="src/MoonScraper.Core/MoonScraper.Core.csproj" />
+  </Folder>
+  <Folder Name="/test/">
+    <Project Path="test/MoonScraper.Core.Tests/MoonScraper.Core.Tests.csproj" />
+  </Folder>
 </Solution>
