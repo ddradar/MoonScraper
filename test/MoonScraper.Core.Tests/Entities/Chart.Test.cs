@@ -20,7 +20,7 @@ public sealed class ChartTest
             int shocks = _random.Next(0, ushort.MaxValue);
             return new((notes, freezes, shocks))
             {
-                DisplayName = $"{nameof(Chart)}({nameof(notes)}: {notes}, {nameof(freezes)}: {freezes}, {nameof(shocks)}: {shocks}) > Creates instance"
+                DisplayName = $"{nameof(Chart)}({notes}, {freezes}, {shocks}) > Creates instance"
             };
         });
 
