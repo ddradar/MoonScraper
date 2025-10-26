@@ -9,6 +9,9 @@ namespace MoonScraper.Core.Tests.Entities;
 [TestClass]
 public sealed class ChartTest
 {
+    /// <summary>
+    /// Gets or sets the test context, which is injected by the MSTest framework to provide information about and control over the test execution.
+    /// </summary>
     public TestContext TestContext { get; set; }
 
     private static readonly Random _random = new();
