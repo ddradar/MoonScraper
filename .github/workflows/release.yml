@@ -16,11 +16,10 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4.2.2
+      - uses: actions/checkout@v5.0.0
       - name: Setup .NET SDK
-        uses: actions/setup-dotnet@v4.3.0
+        uses: actions/setup-dotnet@v5.0.0
         with:
-          dotnet-version: ${{ vars.DOTNET_SDK_VERSIONS }}
           cache: true
           cache-dependency-path: '**/packages.lock.json'
 
@@ -57,35 +56,21 @@ jobs:
           tag_name: ${{ github.event.release.tag_name }}
           files: nupkgs/*.nupkg
 
-  publish-gpr:
-    name: Publish to GitHub Packages
-    needs: [build]
-    permissions:
-      packages: write
-    runs-on: ubuntu-latest
-    steps:
-      - name: Setup .NET SDK # detected from global.json
-        uses: actions/setup-dotnet@v4.3.0
-
-      - name: Download Build Assets
-        uses: actions/download-artifact@v4.1.8
-        with:
-          name: packages
-          path: nupkgs/
-
-      - name: Publish to GitHub Packages
-        run: dotnet nuget push "nupkgs/*.nupkg" --skip-duplicate --source ${GPR_URL} --api-key ${{ secrets.GITHUB_TOKEN }}
-        env:
-          GPR_URL: https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json
-
-  publish-nuget:
+  publish:
     name: Publish to NuGet
     needs: [build]
-    if: false
+    permissions:
+      id-token: write  # enable GitHub OIDC token issuance
     runs-on: ubuntu-latest
     steps:
-      - name: Setup .NET SDK # detected from global.json
-        uses: actions/setup-dotnet@v4.3.0
+      - name: Setup .NET SDK
+        uses: actions/setup-dotnet@v5.0.0
+
+      - name: Login to NuGet (with OIDC)
+        uses: NuGet/login@v1
+        id: login
+        with:
+          user: ${{ secrets.NUGET_USER_NAME }}
 
       - name: Download Build Assets
         uses: actions/download-artifact@v4.1.8
@@ -94,4 +79,4 @@ jobs:
           path: nupkgs/
 
       - name: Publish to NuGet
-        run: dotnet nuget push "nupkgs/*.nupkg" --source https://api.nuget.org/v3/index.json --api-key ${{ secrets.NUGET_API_KEY }}
+        run: dotnet nuget push "nupkgs/*.nupkg" --source https://api.nuget.org/v3/index.json --api-key ${{ steps.login.outputs.NUGET_API_KEY }}
