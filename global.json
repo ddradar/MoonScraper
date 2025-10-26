@@ -5,6 +5,6 @@
     "allowPrerelease": true
   },
   "test": {
-      "runner": "Microsoft.Testing.Platform"
+    "runner": "Microsoft.Testing.Platform"
   }
 }
