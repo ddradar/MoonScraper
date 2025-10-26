@@ -77,8 +77,8 @@ public sealed class ChartTest
     [TestMethod]
     [DataRow(200, 0, 0, 0, 0, 40, 1000000, DisplayName = $"{nameof(Chart)}(200, 30, 10) > .{nameof(Chart.CalcNormalScore)}({nameof(marvelous)}: 200, {nameof(ok)}: 40) > Returns 1000000")]
     [DataRow(160, 40, 0, 0, 0, 40, 999600, DisplayName = $"{nameof(Chart)}(200, 30, 10) > .{nameof(Chart.CalcNormalScore)}({nameof(marvelous)}: 160, {nameof(perfect)}: 40, {nameof(ok)}: 40) > Returns 999600")]
-    [DataRow(0, 0, 200, 0, 0, 40, 664660, DisplayName = $"{nameof(Chart)}(200, 30, 10) > .{nameof(Chart.CalcNormalScore)}({nameof(great)}: 240) > Returns 664660")]
-    [DataRow(0, 0, 0, 200, 0, 40, 331330, DisplayName = $"{nameof(Chart)}(200, 30, 10) > .{nameof(Chart.CalcNormalScore)}({nameof(good)}: 240) > Returns 331330")]
+    [DataRow(0, 0, 200, 0, 0, 40, 664660, DisplayName = $"{nameof(Chart)}(200, 30, 10) > .{nameof(Chart.CalcNormalScore)}({nameof(great)}: 200, {nameof(ok)}: 40) > Returns 664660")]
+    [DataRow(0, 0, 0, 200, 0, 40, 331330, DisplayName = $"{nameof(Chart)}(200, 30, 10) > .{nameof(Chart.CalcNormalScore)}({nameof(good)}: 200, {nameof(ok)}: 40) > Returns 331330")]
     [DataRow(0, 0, 0, 0, 20, 0, 0, DisplayName = $"{nameof(Chart)}(200, 30, 10) > .{nameof(Chart.CalcNormalScore)}({nameof(miss)}: 20) > Returns 0")]
     [DataRow(140, 20, 20, 20, 1, 39, 895230, DisplayName = $"{nameof(Chart)}(200, 30, 10) > .{nameof(Chart.CalcNormalScore)}(mixed) > Returns 895230")]
     public void CalcNormalScore_Should_Return_Expected(int marvelous, int perfect, int great, int good, int miss, int ok, int expected)
