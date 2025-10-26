@@ -17,9 +17,9 @@ jobs:
     name: Lint
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4.2.2
-      - name: Setup .NET SDK # detected from global.json
-        uses: actions/setup-dotnet@v4.3.0
+      - uses: actions/checkout@v5.0.0
+      - name: Setup .NET SDK
+        uses: actions/setup-dotnet@v5.0.0
       - name: Add Problem Matcher for dotnet-format
         run: echo "::add-matcher::.github/dotnet-format.json"
       - name: Lint
@@ -29,9 +29,9 @@ jobs:
     name: Validate NuGet Lock Files
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4.2.2
-      - name: Setup .NET SDK # detected from global.json
-        uses: actions/setup-dotnet@v4.3.0
+      - uses: actions/checkout@v5.0.0
+      - name: Setup .NET SDK
+        uses: actions/setup-dotnet@v5.0.0
         with:
           cache: true
           cache-dependency-path: '**/packages.lock.json'
@@ -47,9 +47,9 @@ jobs:
       matrix:
         os: [ubuntu-latest, windows-latest, macos-latest]
     steps:
-      - uses: actions/checkout@v4.2.2
+      - uses: actions/checkout@v5.0.0
       - name: Setup .NET SDK
-        uses: actions/setup-dotnet@v4.3.0
+        uses: actions/setup-dotnet@v5.0.0
         with:
           cache: true
           cache-dependency-path: '**/packages.lock.json'
@@ -62,7 +62,7 @@ jobs:
         run: dotnet test --no-build --coverage --coverage-output-format cobertura --coverage-output cobertura.xml --output detailed --no-progress --results-directory ./TestResults
 
       - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v5.4.3
+        uses: codecov/codecov-action@v5.5.1
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           flags: ${{ runner.os }}
