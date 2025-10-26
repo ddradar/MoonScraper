@@ -21,7 +21,7 @@ public readonly record struct Chart(ushort Notes, ushort Freezes, ushort Shocks 
     public readonly int MaxExScore => (Notes + Freezes + Shocks) * 3;
 
     /// <summary>
-    /// Calcurate normal score (0-1000000) from <paramref name="judgement"/>.
+    /// Calculate normal score (0-1000000) from <paramref name="judgement"/>.
     /// </summary>
     /// <param name="judgement">Judgement counts</param>
     public readonly int CalcNormalScore(in Judgement judgement)
