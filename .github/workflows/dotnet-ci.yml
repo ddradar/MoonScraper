@@ -62,7 +62,7 @@ jobs:
         run: dotnet test --no-build --coverage --coverage-output-format cobertura --coverage-output cobertura.xml --output detailed --no-progress --results-directory ./TestResults
 
       - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v5.5.1
+        uses: codecov/codecov-action@v5.5.2
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           flags: ${{ runner.os }}
